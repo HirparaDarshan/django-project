@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'user_registration_form/css/login.css' %}">
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Login</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary rounded-pill">Login</button>
+            <a href="{% url 'register' %}" class="btn btn-secondary rounded-pill" role="button">Create new account</a>
+        </form>
+    </div>
+
+</body>
+</html>

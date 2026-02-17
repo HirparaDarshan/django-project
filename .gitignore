@@ -1,0 +1,25 @@
+# Python
+*.pyc
+__pycache__/
+*.env
+*.sqlite3
+
+
+# Django
+db.sqlite3
+/media/
+staticfiles/
+
+# Virtual Environment (you said djangoenv is outside)
+djangoenv/
+
+# Node.js / frontend
+node_modules/
+package-lock.json
+data.json
+package.json
+
+# Optional: IDEs
+.vscode/
+.idea/
+

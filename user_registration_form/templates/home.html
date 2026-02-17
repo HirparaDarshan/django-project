@@ -1,0 +1,71 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'user_registration_form/css/home.css' %}">
+</head>
+<body>
+
+<!-- <div class="home-card">
+    <h2>Home Page</h2>
+
+    {% if user_obj.is_authenticated %}
+        <p class="welcome-text">Welcome, <strong>{{ user_obj.username }}</strong></p>
+
+        {% if user_obj.profile_pic %}
+            <img src="{{ user.profile.profile_pic.url }}" width="150" style="border-radius:50%;">
+        {% else %}
+            <p>No profile picture uploaded</p>
+        {% endif %}
+
+        <p><strong>Email:</strong> {{ user_obj.email }}</p>
+        <p><strong>Mobile:</strong> {{ user_obj.mobile_number }}</p>
+        <p><strong>Hobby:</strong> {{ user_obj.hobby }}</p>
+        <p><strong>Country:</strong> {{ user_obj.country }}</p>
+
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
+    {% endif %}
+</div>
+
+</body>
+</html> -->
+
+
+<div class="home-card">
+    <h2>Home Page</h2>
+
+    {% if request.user.is_authenticated %}
+        <p class="welcome-text">
+            Welcome, <strong>{{ request.user.username }}</strong>
+        </p>
+
+        {% if request.user.profile.profile_pic %}
+            <div class="profile-pic-wrapper">
+                <img src="{{ request.user.profile.profile_pic.url }}" alt="Profile Picture" class="profile-pic">
+            </div>
+        {% else %}
+            <p>No profile picture uploaded</p>
+        {% endif %}
+
+        <p><strong>Email:</strong> {{ request.user.email }}</p>
+        <p><strong>Mobile:</strong> {{ request.user.profile.mobile_number }}</p>
+        <p><strong>Hobby:</strong> {{ request.user.profile.hobby }}</p>
+        <p><strong>Country:</strong> {{ request.user.profile.country }}</p>
+
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
+    {% endif %}
+</div>
+
+</body>
+</html>

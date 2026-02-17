@@ -1,0 +1,113 @@
+/* --- General Page Styling --- */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e5ddd5; /* WhatsApp-like background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Center container for card --- */
+.body-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* --- Register Card Styling --- */
+.register-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-height: 90vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+/* Card Title */
+.register-card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #075e54; /* WhatsApp green-ish */
+}
+
+/* --- Form Fields --- */
+.register-card input[type="text"],
+.register-card input[type="email"],
+.register-card input[type="password"],
+.register-card input[type="file"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* Rounded like WhatsApp */
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    font-size: 14px;
+}
+
+.register-card input:focus {
+    border-color: #25d366; /* WhatsApp green */
+    box-shadow: 0 0 5px rgba(37, 211, 102, 0.5);
+}
+
+/* --- Submit Button --- */
+.register-card .btn-primary {
+    background-color: #25d366; /* WhatsApp green */
+    border-color: #25d366;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.register-card .btn-primary:hover {
+    background-color: #128c7e;
+    border-color: #128c7e;
+}
+
+/* --- Login link --- */
+.register-card .login-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #075e54;
+    font-weight: 500;
+}
+
+.register-card .login-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Scrollbar Styling for card --- */
+.register-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.register-card::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+.register-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 480px) {
+    .register-card {
+        padding: 30px 20px;
+        width: 100%;
+    }
+}
